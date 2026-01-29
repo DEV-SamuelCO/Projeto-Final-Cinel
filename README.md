@@ -39,11 +39,13 @@ A aplicação é um **software desktop** focado em produtividade, automação de
 
 ## 🧠 Tecnologias Utilizadas
 
-- **Python 3**
-- **Flet** ou **Tkinter** (Interface gráfica)
+- **Python 3.19
+- **Flet 0.80.1** e **Tkinter** (Interface gráfica)
 - **SQLite** (Base de dados local)
 - **PyAutoGUI** (Automação e macros)
-- **EasyOCR / Pytesseract** (OCR)
-- **Requests**
-- **Google Translate / Gemini API**
+- **Pytesseract** (OCR)
+- **Mouse** (Automação de mouse)
+- **Keyboard** (Atalhos e captura de teclas)
+- **Pillow** (Manipulação de imagens)
+- **Google Gemini API** (Integração com GenAI)
 
