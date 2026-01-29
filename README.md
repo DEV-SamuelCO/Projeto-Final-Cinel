@@ -39,7 +39,7 @@ A aplicação é um **software desktop** focado em produtividade, automação de
 
 ## 🧠 Tecnologias Utilizadas
 
-- **Python 3.13.9
+- **Python** 3.13.9
 - **Flet 0.80.1** e **Tkinter** (Interface gráfica)
 - **SQLite** (Base de dados local)
 - **PyAutoGUI** (Automação e macros)
