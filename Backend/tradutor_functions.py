@@ -88,7 +88,7 @@ def obter_atalho(user_id):
 
 
 
-GEMINI_API_KEY = "AIzaSyBXIQBK0AEYh8Ob8nnPF2n_93YyWeDEvJ0"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
