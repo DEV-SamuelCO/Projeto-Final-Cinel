@@ -47,19 +47,3 @@ A aplicação é um **software desktop** focado em produtividade, automação de
 - **Requests**
 - **Google Translate / Gemini API**
 
----
-
-## 🗂️ Estrutura do Projeto
-
-/Projeto_Final
-│
-├── main.py # Ponto de entrada da aplicação
-├── database.py # Gestão da base de dados SQLite
-│
-├── auth/ # Login e registo
-├── atalhos/ # Gestão de atalhos
-├── macros/ # Gravação e execução de macros
-├── tradutor/ # OCR e tradução
-│
-├── assets/ # Recursos visuais
-└── README.md
