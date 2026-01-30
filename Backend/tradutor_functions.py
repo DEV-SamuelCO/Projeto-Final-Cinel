@@ -10,8 +10,43 @@ import time
 from google import genai 
 from google.genai import types
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Pytesseract\tesseract.exe'
-#pytesseract.pytesseract.tesseract_cmd = r'C:\programacao\tesseract\tesseract.exe'
+# -----------------------------------
+# Configuração do Tesseract
+# -----------------------------------
+def _configurar_tesseract():
+    """
+    Configura o caminho do Tesseract com as seguintes prioridades:
+    1. Variável de ambiente TESSERACT_PATH
+    2. Caminho padrão em C:\\Pytesseract\\tesseract.exe
+    3. Caminho alternativo em C:\\programacao\\tesseract\\tesseract.exe
+    """
+    # Tentar variável de ambiente primeiro
+    tesseract_path = os.getenv('TESSERACT_PATH')
+    
+    if not tesseract_path:
+        # Fallbacks para caminhos conhecidos
+        default_paths = [
+            r'C:\Pytesseract\tesseract.exe',
+            r'C:\programacao\tesseract\tesseract.exe',
+            r'C:\Program Files\Tesseract-OCR\tesseract.exe',  # Instalação padrão
+        ]
+        
+        for path in default_paths:
+            if os.path.exists(path):
+                tesseract_path = path
+                break
+    
+    if tesseract_path and os.path.exists(tesseract_path):
+        pytesseract.pytesseract.tesseract_cmd = tesseract_path
+        print(f"✓ Tesseract configurado: {tesseract_path}")
+    else:
+        raise FileNotFoundError(
+            "Tesseract não encontrado! Configure a variável de ambiente TESSERACT_PATH "
+            "com o caminho completo para tesseract.exe"
+        )
+
+# Executar configuração na importação do módulo
+_configurar_tesseract()
 
 # -----------------------------------
 # Conexão Global + WAL (super rápido)
